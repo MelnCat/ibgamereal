@@ -1,0 +1,113 @@
+@font-face {
+	font-family: "Transat Light";
+	src: url("../../assets/font/transat-light.ttf");
+}
+@font-face {
+	font-family: "Transat Standard";
+	src: url("../../assets/font/transat-standard.ttf");
+}
+@font-face {
+	font-family: "Transat Black";
+	src: url("../../assets/font/transat-black.ttf");
+}
+
+.pageTitle {
+	font-family: "Transat Black", sans-serif;
+	font-size: 2.5em;
+	margin: 0.5em 0;
+}
+
+.group {
+	background-color: #111111;
+	font-family: "Transat Standard", sans-serif;
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+	padding: 1px;
+	width: 28em;
+}
+.title {
+	background-color: #ededed;
+	font-size: 1.5em;
+	text-align: center;
+}
+.groupRow {
+	font-family: "Transat Light", sans-serif;
+	font-size: 1.3em;
+	display: flex;
+	background-color: #ffffff;
+}
+.groupLeft,
+.groupCheckbox {
+	height: 1.9em;
+	text-align: left;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 0.5em;
+}
+.groupLeft {
+	flex-grow: 1;
+	line-height: 0.9em;
+}
+.extra {
+	font-size: 0.7em;
+	font-weight: bold;
+	line-height: 1em;
+}
+.groupCheckbox {
+	width: 3.3em;
+	cursor: pointer;
+	user-select: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual, cursive;
+	border-left: black 1px solid;
+	&:hover {
+		background-color: #11111115;
+	}
+	&:active {
+		background-color: #1111112a;
+	}
+}
+.checkbox {
+	position: absolute;
+	font-size: 1.5em;
+}
+.groupRowChecked {
+	background-color: #ffffdf;
+}
+.form {
+	display: flex;
+	gap: 2em;
+	justify-content: center;
+}
+.form section {
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+}
+.illegalClass {
+	cursor: not-allowed;
+	&:hover, &:active {
+		background-color: #77000025;
+	}
+	&:hover::before {
+		content: "💀";
+	}
+}
+.groupRow:has(.illegalClass:hover) {
+	color: #770000;
+}
+.funkyBar {
+	background-color: #ed7d31;
+	width: 100%;
+	height: 2em;
+}
+.paper {
+	max-width: 1280px;
+	margin: 0 auto;
+    box-shadow: black 0px 1px 3px 0px;
+	padding-bottom: 3em;
+}

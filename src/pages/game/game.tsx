@@ -1,11 +1,12 @@
 import styles from "./game.module.scss";
 import { ModalContext, useBgm, useGameStage, usePage, useStats, useTime } from "../../util/hooks";
-import { Fragment, ReactNode, useEffect, useMemo, useState } from "react";
+import { CSSProperties, Fragment, ReactNode, useEffect, useMemo, useState } from "react";
 import { Home } from "./home";
 import { useInterval } from "usehooks-ts";
 import { AnimatePresence, motion } from "motion/react";
 import { StatBar } from "../../components/StatBar";
 
+type a = CSSProperties 
 export const GamePage = () => {
 	const [page, setPage] = usePage();
 	const [gameStage, setGameStage] = useGameStage();

@@ -1,0 +1,23 @@
+.statBar {
+    width: 8.9em;
+    height: 1.8em;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+	position: relative;
+}
+.statImage {
+	position: absolute;
+	left: 0;
+	translate: -50%;
+	width: 2em;
+	height: auto;
+}
+.stat {
+	display: flex;
+	align-items: center;
+	gap: 0.2em;
+	font-size: 1.8em;
+}

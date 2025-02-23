@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./setup.module.scss";
 import { courseMap, courses } from "../../data/courses";
+import { useBgm, useOptionalGameData, usePage } from "../../util/hooks";
 
 const GroupRow = ({ name, onSelect, extra, id, checked }: { id: string; name: string; onSelect: (id: string) => void; extra?: string; checked: string[] }) => {
 	return (
@@ -23,6 +24,9 @@ const GroupRow = ({ name, onSelect, extra, id, checked }: { id: string; name: st
 
 export const SetupPage = () => {
 	const [checked, setChecked] = useState([] as string[]);
+	const [game, setGame] = useOptionalGameData();
+	const [page, setPage] = usePage();
+	useBgm("lobby");
 	const onSelect = (id: string) => {
 		const course = courseMap[id];
 		if (checked.includes(id)) {
@@ -51,6 +55,14 @@ export const SetupPage = () => {
 				.concat(others.reverse().slice(0, 2))
 				.concat(id)
 		);
+	};
+	const onSubmit = () => {
+		if (checked.length < 6) return alert("imagine being in partial");
+		if (checked.filter(x => courseMap[x].id.includes("hl")).length < 3) return alert("not enough HLs");
+		setGame({
+			courses: checked,
+		});
+		setPage("intro");
 	};
 	return (
 		<main>
@@ -116,6 +128,7 @@ export const SetupPage = () => {
 						</div>
 					</section>
 				</article>
+				<button onClick={onSubmit} className="maxButton">Submit</button>
 			</div>
 		</main>
 	);

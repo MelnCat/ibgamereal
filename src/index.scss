@@ -1,8 +1,46 @@
-html, head, body {
+html,
+head,
+body {
 	min-height: 100%;
 	padding: 0;
 	margin: 0;
+	font-family: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052, Sylfaen, serif;
+	font-weight: normal;
+}
+h1 {
+	font-size: 2.5em;
+	margin-bottom: 0.5em;
 }
 * {
 	box-sizing: border-box;
+}
+#root {
+	margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.maxButton {
+	border-image: url("/img/maxButton.png") 112 114 114 104 fill / 112px 114px 114px 104px;
+	padding: 13px 33px;
+	font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+	color: yellow;
+	font-size: 49px;
+	background-color: unset;
+	border-radius: 31%;
+	cursor: pointer;
+	&:hover {
+		filter: brightness(0.9);
+	}
+	&:active {
+		filter: brightness(0.7);
+	}
+}
+
+button {
+	border: none;
+	cursor: pointer;
 }

@@ -1,0 +1,166 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.gameBox {
+	aspect-ratio: 16 / 9;
+	width: min(100vw, calc(100vh * 16 / 9));
+	position: relative;
+}
+.background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background-color: #eeeeee;
+}
+.time {
+	position: absolute;
+	top: 1em;
+	left: 50%;
+	translate: -50%;
+	width: 14em;
+	img {
+		width: 100%;
+	}
+}
+.timeDisplay {
+	position: absolute;
+	top: 5%;
+	left: 0;
+	right: 0;
+	font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+	font-weight: bold;
+	font-size: 3.5em;
+}
+
+.modalContainer {
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template: 1fr / 1fr;
+	align-items: center;
+	justify-items: center;
+	z-index: 1;
+	overflow-y: auto;
+	flex-wrap: wrap;
+	&[data-active] {
+		pointer-events: all;
+		backdrop-filter: blur(6px);
+	}
+}
+.homework {
+	width: 28em;
+	aspect-ratio: 8 / 10.5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.7em;
+	h1 {
+		margin: 0;
+		padding: 0.2em;
+	}
+	input {
+		width: 18em;
+		height: 2em;
+		font-size: inherit;
+	}
+	button {
+		font-size: 1.2em;
+		padding: 0.2em 0.5em;
+	}
+}
+.paperHomework {
+	background-color: #ffffff;
+	border: 2px solid #00000022;
+}
+.bookHomework {
+	position: relative;
+	user-select: none;
+	.page {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform-origin: 0 0;
+		backface-visibility: hidden;
+		transform-style: preserve-3d;
+		.pageFront,
+		.pageBack {
+			border: 2px solid #00000022;
+			background-color: #ffffff;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			backface-visibility: hidden;
+			padding: 1em;
+			font-family: sans-serif;
+			text-align: left;
+			line-height: 1.5em;
+		}
+		.pageBack {
+			transform: rotateY(180deg);
+		}
+	}
+	.cover .pageFront {
+		background-color: #5884a8;
+		background-image: url("/img/kafka.jpg");
+		background-size: cover;
+	}
+}
+.activeHomework {
+	position: absolute;
+	top: 4em;
+	left: 50%;
+	translate: -50% 0;
+	z-index: 2;
+	.bookHomework {
+		translate: 50%;
+	}
+}
+.homeworkSubmit {
+	margin-top: auto;
+}
+
+.homeworkWrapper {
+	position: relative;
+	user-select: none;
+	.homework {
+		font-size: 0.5em;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+	}
+}
+.homeworkTitle {
+	margin-top: 0.5em;
+}
+.homeworkButton {
+	position: absolute;
+	bottom: 8em;
+	right: 4em;
+}
+.statBars {
+	position: absolute;
+	top: 2em;
+	right: 2em;
+	gap: 0.5em;
+	display: flex;
+	flex-direction: column;
+}

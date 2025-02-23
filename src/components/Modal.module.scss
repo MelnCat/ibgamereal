@@ -1,0 +1,44 @@
+.modal {
+	display: flex;
+	flex-direction: column;
+	width: calc((min(100vw, 100vh * 16 / 9) - 12em) * var(--scaleX));
+	height: calc((min(100vw, 100vh * 16 / 9) * 9 / 16 - 6em) * var(--scaleY));
+	background-color: #eeeeeeee;
+	position: relative;
+}
+.modalBar {
+	height: 3em;
+	background-color: #ffffff;
+	display: flex;
+}
+.modalContents {
+	display: flex;
+	gap: 1em;
+	padding: 1em;
+	flex-wrap: wrap;
+	overflow-y: scroll;
+	height: auto;
+	align-items: center;
+	justify-content: center;
+}
+.closeButton {
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	background-color: #994242;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 2.4em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+}
+.title {
+	font-size: 2em;
+	flex-grow: 1;
+	text-align: center;
+	font-weight: bold;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}

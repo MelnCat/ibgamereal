@@ -114,5 +114,10 @@ export const ModalContext = createContext<{ modals: { id: number; element: React
 	modals: [],
 	setModals() {},
 });
+export const AlertContext = createContext<{ alerts: { id: number; element: ReactNode }[]; setAlerts: Dispatch<SetStateAction<{ id: number; element: ReactNode }[]>> }>({
+	alerts: [],
+	setAlerts() {},
+});
 
 export const useModals = () => useContext(ModalContext);
+export const useAlerts = () => useContext(AlertContext);

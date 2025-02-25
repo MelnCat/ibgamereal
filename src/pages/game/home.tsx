@@ -36,6 +36,16 @@ export const Home = () => {
 							});
 						}}
 					/>
+					<img
+						src="/img/bed.png"
+						className={styles.bedButton}
+						onClick={() => {
+							setModals(x => {
+								const id = Math.random();
+								return x.concat({ id, element: <BedModal id={id} /> });
+							});
+						}}
+					/>
 				</>
 			) : room === "kitchen" ? (
 				<></>
@@ -62,13 +72,15 @@ const HomeworkModal = ({ id }: { id: number }) => {
 				.map(x => {
 					const Element = homeworkMap[x.type];
 					return (
-						<div className={styles.homeworkWrapper} key={x.id} onClick={() => {
-							if (activeHomework) return;
-							if (stats.energy < 4) return alert("Not enough energy.")
-							setActiveHomework(x.id);
-
-							
-						}}>
+						<div
+							className={styles.homeworkWrapper}
+							key={x.id}
+							onClick={() => {
+								if (activeHomework) return;
+								if (stats.energy < 4) return alert("Not enough energy.");
+								setActiveHomework(x.id);
+							}}
+						>
 							<Element layout layoutId={x.id.toString()} id={x.id} />
 							<motion.div className={styles.homeworkTitle} layout layoutId={`title-${x.id}`}>
 								{courseMap[x.course].name}
@@ -93,4 +105,13 @@ const HomeworkModal = ({ id }: { id: number }) => {
 			)}
 		</Modal>
 	);
+};
+
+const BedModal = ({ id }: { id: number }) => {
+	const [homework, setHomework] = useHomework();
+	const [activeHomework, setActiveHomework] = useState<number | null>(null);
+	const Active = activeHomework ? homeworkMap[homework.find(x => x.id === activeHomework)!.type] : null;
+	const activeRef = useRef<HTMLDivElement | null>(null);
+	const [stats, setStats] = useStats();
+	return <Modal id={id} title="Bed" scaleX={0.4} scaleY={0.5}></Modal>;
 };

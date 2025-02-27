@@ -38,18 +38,19 @@ function App() {
 		const newSrc = `/audio/${bgm}.mp3`;
 		if (newSrc !== sound.src) {
 			sound.pause();
+			sound.volume = 0.5;
 			sound.currentTime = 0;
 			sound.src = newSrc;
 		}
 	}, [clicked, bgm, sound]);
 	useEffect(() => {
 		new Canvas(canvasRef.current!, {
-			fragmentString: shader,
+			fragmentString: shader
 		});
 	});
 	return (
 		<>
-			<canvas className={styles.background} ref={canvasRef}/>
+			<canvas className={styles.background} ref={canvasRef} />
 			{clicked || (
 				<button className={styles.clickCheck} onClick={onClick}>
 					Click to begin

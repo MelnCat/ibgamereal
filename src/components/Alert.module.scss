@@ -2,12 +2,14 @@
 	display: flex;
 	background-color: #ffffffdd;
 	font-family: sans-serif;
-	align-items: center;
+	align-items: stretch;
 	gap: 1em;
 	padding: 0.5em 1em;
-    pointer-events: all;
-    user-select: none;
-    border: 2px solid #cccccc;
+	padding-right: 0.5em;
+	pointer-events: all;
+	user-select: none;
+	border: 2px solid #cccccc;
+	max-width: 28em;
 	h1 {
 		font-size: 1.6em;
 	}
@@ -15,6 +17,9 @@
 	p {
 		margin: 0;
 		padding: 0;
+	}
+	p {
+		text-align: left;
 	}
 }
 .alertInfo {
@@ -26,4 +31,13 @@
 	display: flex;
 	flex-direction: column;
 	font-size: 2.5em;
+}
+.closeContainer {
+	display: flex;
+	height: 100%;
+}
+.close {
+	aspect-ratio: 1 / 1;
+	font-weight: bold;
+	margin-bottom: auto;
 }

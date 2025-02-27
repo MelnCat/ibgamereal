@@ -74,7 +74,7 @@ export const courses = ([
 		tag: "glopo"
 	},
 	{
-		name: "glopohl HL",
+		name: "Global Politics HL",
 		id: "glopohl",
 		level: "h",
 		group: 3,
@@ -167,6 +167,14 @@ export const courses = ([
 		group: 5,
 		homework: 20,
 		difficulty: 4
+	},
+	{
+		name: "Spare",
+		id: "spare",
+		level: "s",
+		group: 0,
+		homework: 0,
+		difficulty: 0
 	},
 
 

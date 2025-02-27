@@ -52,6 +52,7 @@
 	z-index: 1;
 	overflow-y: auto;
 	flex-wrap: wrap;
+	transition: backdrop-filter 0.5s;
 	&[data-active] {
 		pointer-events: all;
 		backdrop-filter: blur(6px);
@@ -81,6 +82,16 @@
 .paperHomework {
 	background-color: #ffffff;
 	border: 2px solid #00000022;
+}
+.extraButtons {
+	position: absolute;
+	left: 1em;
+	bottom: 1em;
+	button {
+		font-size: 1.2em;
+		padding: 0.5em 1em;
+		font-weight: bold;
+	}
 }
 .bookHomework {
 	position: relative;
@@ -154,15 +165,15 @@
 }
 .homeworkButton {
 	position: absolute;
-    bottom: 42%;
-    right: 10%;
-    width: 10%;
+	bottom: 42%;
+	right: 10%;
+	width: 10%;
 }
 .bedButton {
 	position: absolute;
-    left: 36%;
-    top: 39%;
-    width: 34%;
+	left: 36%;
+	top: 39%;
+	width: 34%;
 }
 .statBars {
 	position: absolute;
@@ -182,8 +193,69 @@
 	height: 100%;
 	z-index: 2;
 	overflow: hidden;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	flex-direction: column;
+	padding: 0.5em;
+	gap: 0.5em;
 }
-.alert {
+.hallwayButton {
 	position: absolute;
-	bottom: 1em;
+	top: 44%;
+	left: 19%;
+	width: 10%;
+}
+.roomButton {
+	position: absolute;
+	top: 83%;
+	left: 47%;
+	width: 7%;
+	rotate: 180deg;
+}
+.fakeRoomButton {
+	position: absolute;
+	top: 52%;
+	left: 28.7%;
+	width: 7%;
+}
+.exitButton {
+	position: absolute;
+	top: 50%;
+	left: 56.2%;
+	width: 7%;
+}
+.kitchenButton {
+	position: absolute;
+	top: 46%;
+	left: 73%;
+	width: 12%;
+}
+.exitKitchenButton {
+	position: absolute;
+	top: 32%;
+	left: 7%;
+	width: 12%;
+}
+.timetable {
+	font-size: 1.5em;
+	border-collapse: collapse;
+	&,
+	th, td {
+		border: 2px solid black;
+	}
+	th, td {
+		padding: 1.2em 2em;
+		background-color: #ffffff;
+	}
+	th {
+		background-color: #eeeeee;
+	}
+}
+.gameTime {
+	position: absolute;
+	left: 0.4em;
+	top: 0.2em;
+	font-weight: bold;
+	font-size: 1.7em;
 }

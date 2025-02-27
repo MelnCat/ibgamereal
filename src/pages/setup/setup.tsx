@@ -59,8 +59,12 @@ export const SetupPage = () => {
 	const onSubmit = () => {
 		if (checked.length < 6) return alert("imagine being in partial");
 		if (checked.filter(x => courseMap[x].id.includes("hl")).length < 3) return alert("not enough HLs");
+		const schedule = checked.concat("spare").concat("tok");
+		while (schedule[0] === "spare" || schedule[4] === "spare") schedule.sort(() => Math.random() - 0.5)
 		setGame({
 			courses: checked,
+			schedule: [schedule.slice(0, 4) as [string, string, string, string], schedule.slice(4, 8) as [string, string, string, string]],
+			grades: Object.fromEntries(checked.map(x => [x, 100]))
 		});
 		setPage("intro");
 	};
@@ -128,7 +132,9 @@ export const SetupPage = () => {
 						</div>
 					</section>
 				</article>
-				<button onClick={onSubmit} className="maxButton">Submit</button>
+				<button onClick={onSubmit} className="maxButton">
+					Submit
+				</button>
 			</div>
 		</main>
 	);

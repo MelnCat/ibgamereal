@@ -21,6 +21,15 @@
 	height: auto;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
+	h1, p {
+		margin: 0;
+	}
+	button {
+		font-size: 1.2em;
+		padding: 0.3em 0.7em;
+		background-color: #ffffff;
+	}
 }
 .closeButton {
 	height: 100%;

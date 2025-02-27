@@ -4,8 +4,9 @@ body {
 	min-height: 100%;
 	padding: 0;
 	margin: 0;
-	font-family: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052, Sylfaen, serif;
+	font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
 	font-weight: normal;
+	font-size: 1vw;
 }
 h1 {
 	font-size: 2.5em;
@@ -47,4 +48,10 @@ h1 {
 button {
 	border: none;
 	cursor: pointer;
+	&:hover {
+		background-color: #f3f3f3;
+	}
+	&:active {
+		background-color: #e7e7e7;
+	}
 }

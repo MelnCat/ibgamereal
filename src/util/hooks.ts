@@ -5,6 +5,7 @@ export const usePage = () => useLocalStorage("page", "main");
 
 export const useGameStage = () => useLocalStorage("gameStage", "home");
 export const useGamePhase = () => useLocalStorage("gamePhase", "am");
+export const useGameStep = () => useLocalStorage("gameStep", 0);
 export const useGameFlags = () => useLocalStorage("gameFlags", [] as string[])
 export const useGameTime = () => useLocalStorage("gameTime", { month: "fall", date: 1, day: 1, block: "-" })
 export interface GameData {

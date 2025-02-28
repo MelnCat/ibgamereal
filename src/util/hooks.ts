@@ -1,4 +1,4 @@
-import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from "react";
+import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useRef, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
 
 export const usePage = () => useLocalStorage("page", "main");
@@ -6,14 +6,11 @@ export const usePage = () => useLocalStorage("page", "main");
 export const useGameStage = () => useLocalStorage("gameStage", "home");
 export const useGamePhase = () => useLocalStorage("gamePhase", "am");
 export const useGameStep = () => useLocalStorage("gameStep", 0);
-export const useGameFlags = () => useLocalStorage("gameFlags", [] as string[])
-export const useGameTime = () => useLocalStorage("gameTime", { month: "fall", date: 1, day: 1, block: "-" })
+export const useGameFlags = () => useLocalStorage("gameFlags", [] as string[]);
+export const useGameTime = () => useLocalStorage("gameTime", { month: "fall", date: 1, day: 1, block: "-" });
 export interface GameData {
 	courses: string[];
-	schedule: [
-		[string, string, string, string],
-		[string, string, string, string],
-	],
+	schedule: [[string, string, string, string], [string, string, string, string]];
 	grades: Record<string, number>;
 }
 
@@ -157,8 +154,33 @@ export const useAlerts = () => {
 		},
 	};
 };
+export const DialogueContext = createContext<{ dialogue: { id: number; dialogue: Dialogue }[]; setDialogue: Dispatch<SetStateAction<{ id: number; dialogue: Dialogue }[]>> }>({
+	dialogue: [],
+	setDialogue() {},
+});
 export interface Dialogue {
 	image?: string;
 	name?: string;
 	text: string;
+}
+export const useDialogue = () => {
+	const {dialogue, setDialogue} = useContext(DialogueContext);
+	return {
+		dialogue,
+		setDialogue,
+		addDialogue(d: Dialogue) {
+			setDialogue(x => x.concat({ id: Math.random(), dialogue: d }))
+		},
+		nextDialogue() {
+			setDialogue(x => x.slice(1))
+		}
+	}
+};
+export const useRunOnce = (cb: () => void) => {
+	const ref = useRef(false);
+	useEffect(() => {
+		if (ref.current) return;
+		ref.current = true;
+		cb();
+	}, [cb])
 }

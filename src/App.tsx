@@ -52,9 +52,9 @@ function App() {
 		<>
 			<canvas className={styles.background} ref={canvasRef} />
 			{clicked || (
-				<button className={styles.clickCheck} onClick={onClick}>
+				<div className={styles.clickCheck} onClick={onClick}>
 					Click to begin
-				</button>
+				</div>
 			)}
 			<Page />
 		</>

@@ -11,6 +11,9 @@ dependencies:
   glsl-canvas-js:
     specifier: ^0.2.9
     version: 0.2.9
+  grapheme-splitter:
+    specifier: ^1.0.4
+    version: 1.0.4
   motion:
     specifier: ^12.4.7
     version: 12.4.7(react-dom@19.0.0)(react@19.0.0)
@@ -1210,6 +1213,10 @@ packages:
     dependencies:
       gl-matrix: 3.3.0
       promise-polyfill: 8.2.0
+    dev: false
+
+  /grapheme-splitter@1.0.4:
+    resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: false
 
   /graphemer@1.4.0:

@@ -11,7 +11,8 @@ export const School = () => {
 	return (
 		<>
 			<img className={styles.background} src="/img/schoolBack.png" />
-			<img className={styles.background} style={{ backgroundColor: "unset" }} src="/img/schoolFront.png" />
+			<img className={styles.teacher} src="/img/max.png" />
+			<img className={styles.background} style={{ backgroundColor: "unset", zIndex: 1 }} src="/img/schoolFront.png" />
 		</>
 	);
 };

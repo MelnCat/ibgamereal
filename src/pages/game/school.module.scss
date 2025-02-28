@@ -1,1 +1,8 @@
 @use "./game.module.scss";
+.teacher {
+	position: absolute;
+    left: 42%;
+    top: 5%;
+    height: 81%;
+    z-index: 0;
+}

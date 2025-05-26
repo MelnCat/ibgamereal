@@ -44,9 +44,9 @@ function App() {
 		}
 	}, [clicked, bgm, sound]);
 	useEffect(() => {
-		new Canvas(canvasRef.current!, {
+		/*new Canvas(canvasRef.current!, {
 			fragmentString: shader
-		});
+		});*/
 	}, []);
 	return (
 		<>

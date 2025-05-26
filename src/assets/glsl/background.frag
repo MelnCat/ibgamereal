@@ -67,10 +67,11 @@ float fractalNoise(in vec2 p) {
 
 void main( )
 {
-    vec2 p = gl_FragCoord.xy / u_resolution.xy;
+    /*vec2 p = gl_FragCoord.xy / u_resolution.xy;
 	p.x *= 1.4;
 	float f = fractalNoise(p + vec2(u_time*0.002) + 0.2 * vec2(
     fractalNoise(p * 0.5 * m + u_time * 0.02),fractalNoise(p * m + u_time * 0.02)
     ));
-	gl_FragColor = vec4(mix(vec3(0.850,1.000,1.000), vec3(0.153,0.112,0.365), f), 1.0 );
+	gl_FragColor = vec4(mix(vec3(0.850,1.000,1.000), vec3(0.153,0.112,0.365), f), 1.0 );*/
+	gl_FragColor = vec4(sin(u_time), sin(u_time*2.-1.), sin(u_time+2.), 1.);
 }

@@ -47,7 +47,7 @@ function App() {
 		new Canvas(canvasRef.current!, {
 			fragmentString: shader
 		});
-	});
+	}, []);
 	return (
 		<>
 			<canvas className={styles.background} ref={canvasRef} />
